@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "name": "Pham Thinh",
+      "phone": "123456789",
+      "email": "info@coders.tokyo",
+      "password": "123",
+      "id": "abcdxyz"
+    }
+  ]
+}

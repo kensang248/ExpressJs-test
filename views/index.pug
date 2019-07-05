@@ -1,0 +1,22 @@
+extends ./layouts/common.pug
+block content
+    h1 
+    
+      span Users
+      a.btn.btn-primary.ml-3(href="/user/create") Create new user
+    .d-flex.align-items-center 
+    
+    forms.ml-auto(action='/user/search', method='get')
+      input(type='text', name='q' value=pastTyping)
+      button Search
+    table.table
+      tr
+        th Name
+        th Phone
+        th Actions
+      each user in userList
+        tr
+          td= user.name
+          td= user.phone
+          td
+            a.btn.btn-light(href=`/user/view/${user.id}`) View
