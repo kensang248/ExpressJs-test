@@ -1,5 +1,6 @@
 var db = require("../db.js");
 var shortid = require('shortid');
+var md5 = require('md5');
 
 module.exports.index = function(request, response) {
     let users = db.get("users").value();
@@ -27,6 +28,8 @@ module.exports.getCreate =  function(request, response) {
 
 module.exports.postCreate = function(request, response) {
   request.body.id= shortid.generate();
+  // request.body.password= md5(request.body.password);
+
         db.get("users")
           .value()
           .push(request.body);

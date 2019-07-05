@@ -1,4 +1,5 @@
 var db = require("../db.js");
+var md5 = require('md5');
 
 module.exports.login = function(request, response) {
   response.render("auth/login", {
@@ -22,13 +23,15 @@ module.exports.postLogin = function(request, response) {
     });
     return;
   }
-  if (user.password !== password) {
+  if (user.password !== md5(password)) {
     response.render("auth/login", {
         errors: ["Wrong password"],
         values:request.body
       });
       return;
   }
-  response.cookie('userId',user.id);
+  response.cookie('userId',user.id,{
+    signed:true
+  });
   response.redirect('/user');
 };
