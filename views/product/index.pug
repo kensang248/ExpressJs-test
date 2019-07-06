@@ -1,0 +1,63 @@
+extend ../layouts/common.pug
+block content
+    .container.mt-3
+        .row
+            .col.pr-2.pl-2.pb-2
+                each product in firstColProducts
+                    .card(style='width: 16rem;height:450px').mb-2
+                        .card-body.d-flex.flex-column.p-0.m-0.pt-2
+                            .mw-100.p-0
+                                img.img-fluid(src=product.image)
+                            .pt-2.pl-3.pr-3.pb-3
+                                h5.card-title=product.name
+                                p.card-text=product.description
+                                a.card-link.btn.btn-primary(href='#') Add to cart
+            .col.pr-2.pl-2.pb-2
+                  each product in secondColProducts
+                    .card(style='width: 16rem; height:450px').mb-2
+                        .card-body.d-flex.flex-column.p-0.m-0.pt-2
+                            .mw-100.p-0
+                                img.img-fluid(src=product.image)
+                            .pt-2.pl-3.pr-3.pb-3
+                                h5.card-title=product.name
+                                p.card-text=product.description
+                                a.card-link.btn.btn-primary(href='#') Add to cart
+            .col.pr-2.pl-2.pb-2
+                  each product in thirdColProducts
+                    .card(style='width: 16rem;height:450px').mb-2
+                        .card-body.d-flex.flex-column.p-0.m-0.pt-2
+                            .mw-100.p-0
+                                img.img-fluid(src=product.image)
+                            .pt-2.pl-3.pr-3.pb-3
+                                h5.card-title=product.name
+                                p.card-text=product.description
+                                a.card-link.btn.btn-primary(href='#') Add to cart
+            .col.pr-2.pl-2.pb-2
+                  each product in fourthColProducts
+                    .card(style='width: 16rem;height:450px').mb-2
+                        .card-body.d-flex.flex-column.p-0.m-0.pt-2
+                            .mw-100.p-0
+                                img.img-fluid(src=product.image)
+                            .pt-2.pl-3.pr-3.pb-3
+                                h5.card-title=product.name
+                                p.card-text=product.description
+                                a.card-link.btn.btn-primary(href='#') Add to cart
+    nav(aria-label='Page navigation example')
+        ul.pagination.text-center
+            li.page-item
+                a.page-link(href=`/product?page=${page-1}`, aria-label='Previous')
+                    span(aria-hidden='true') &laquo;
+                    span.sr-only Previous
+            li.page-item
+                a.page-link(href=`/product?page=${page-1}`) 
+                    span= page -1
+            li.page-item
+                a.page-link(href=`/product?page=${page}`) 
+                    span=page
+            li.page-item
+                a.page-link(href=`/product?page=${page+1}`)
+                    span= page+1
+            li.page-item
+                a.page-link(href=`/product?page=${page+1}`, aria-label='Next')
+                    span(aria-hidden='true') &raquo;
+                    span.sr-only Next
