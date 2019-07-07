@@ -31,7 +31,7 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "abcdxyz",
       "name": "Byron",
       "image": "https://loremflickr.com/320/240",
       "description": "dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique"
@@ -629,6 +629,14 @@
       "name": "Alvera",
       "image": "https://loremflickr.com/320/240",
       "description": "est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "RBA81DSu3",
+      "cart": {
+        "abcdxyz": 1
+      }
     }
   ]
 }

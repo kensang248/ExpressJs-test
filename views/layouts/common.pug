@@ -17,7 +17,13 @@ body
             | Home 
             span.sr-only (current)
         li.nav-item
-         a.nav-link(href='/user') Link
+         a.nav-link(href='/user') User
+        li.nav-item
+          a.nav-link(href='/product') Product
+        li.nav-item
+          a.nav-link(href='#') Cart &nbsp
+            span= totalProduct
+            
     if user
       p= user.name 
   .container.pt-5
