@@ -8,6 +8,7 @@ var productRoute = require('./routes/product.route');
 
 var authMiddlewares = require('./middlewares/auth.middleware.js'); 
 
+app.use(express.static('public'))
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser("secret"));

@@ -5,11 +5,14 @@ block content
     each item in errors 
       .alert.alert-danger= item
     
-  form(action="/user/create", method="post")
+  form(action="/user/create", method="post" enctype="multipart/form-data")
       .form-group
         label#name Name:
         input.form-control(type="text" name="name" value=values ? values.name : '')
       .form-group
         label#phone Phone:
         input.form-control(type="text" name="phone" value=values ? values.phone : '') 
+      .form-group
+        label#avatar Avatar:
+        input.form-control-file(type="file" name="avatar") 
       button.btn.btn-primary Create
